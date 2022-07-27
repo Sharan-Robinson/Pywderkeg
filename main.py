@@ -1,18 +1,25 @@
-import game
 import time
+from game import *
 
 global savelist
 savelist = []
 
 def startgame():
+
     print("Please select a nation to play as!")
-    nation = input(
+    gamenation = input(
         "1. Austria-Hungary"
         "2.Serbia"
         "3. Greece"
         "4. Turkey"
         "5. Bulgaria"
     )
+
+    savegamename = input("What would you like to call this game?")
+
+    newgame = game(gamenation)
+
+    newgame.createsavegame(savegamename)
 
 def continuesave():
     if not savelist:
